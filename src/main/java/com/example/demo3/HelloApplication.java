@@ -17,6 +17,8 @@ public class HelloApplication extends Application {
     public AnchorPane initialAnchorPane;
     public Pane initailPane;
     private static HelloApplication instance;
+
+
     public HelloApplication() {
         instance = this;
     }
@@ -37,7 +39,7 @@ public class HelloApplication extends Application {
         AnchorPane.setRightAnchor(initailPane, 0.0);
         MainAnchor.getChildren().add(SideBar);
         MainAnchor.getChildren().add(initailPane);
-
+        System.out.println("new Main (initial) Pane had opened");
         Scene scene = new Scene(MainAnchor);
         stage.setTitle("PomoTask");
         stage.setScene(scene);
@@ -50,7 +52,7 @@ public class HelloApplication extends Application {
             return loader.load();
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("hna rah el mochkil");
+            System.out.println("new null Pane has created");
             return new AnchorPane(); // Return an empty pane in case of an exception
         }
     }

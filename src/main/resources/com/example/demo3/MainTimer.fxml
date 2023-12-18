@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -26,44 +27,36 @@
                         </Text>
                      </children>
                   </Pane>
-                  <Pane fx:id="taskpane" prefHeight="44.0" prefWidth="200.0" style="-fx-background-color: #e3e3e3; -fx-background-radius: 10px; -fx-border-color: #b5b5b5;">
-                     <children>
-                        <Button fx:id="Stats_button121" alignment="CENTER" contentDisplay="CENTER" layoutX="154.0" layoutY="10.0" mnemonicParsing="false" onAction="#Stats_button_action" onMouseExited="#StdBtnME" onMouseMoved="#hover" prefHeight="19.0" prefWidth="32.0" style="-fx-background-color: #e3e3e3; -fx-border-color: #b5b5b5; -fx-border-radius: 5px;" text="..." textAlignment="CENTER" textFill="#353535" />
-                        <Button fx:id="Stats_button1211" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="9.0" mnemonicParsing="false" onAction="#Stats_button_action" onMouseExited="#StdBtnME" onMouseMoved="#hover" prefHeight="25.0" prefWidth="20.0" style="-fx-background-color: #e3e3e3; -fx-border-radius: 5px;" textAlignment="CENTER" textFill="#353535" />
-                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="14.0" layoutY="12.0">
+<!--                  I want to add the new Pane here-->
+                  <Button id="addNewTask" fx:id="addTask_button" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addTaskButton" onMouseExited="#StdBtnME" onMouseMoved="#hover" prefHeight="44.0" prefWidth="191.0" style="-fx-background-color: #e3e3e3; -fx-border-color: #ff4043; -fx-border-radius: 5px;" textAlignment="CENTER" textFill="#909090">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="addTask" fitHeight="32.0" fitWidth="30.0">
                            <image>
-                              <Image url="@../../../assets/Icons/play.png" />
+                              <Image url="@../../../assets/Icons/add.png" />
                            </image>
                         </ImageView>
-                        <Text layoutX="41.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="tasks name">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </Pane>
-                  <Button id="addNewTask" fx:id="addTask_button" contentDisplay="CENTER" mnemonicParsing="false" onAction="#Stats_button_action" onMouseExited="#StdBtnME" onMouseMoved="#hover" prefHeight="68.0" prefWidth="191.0" style="-fx-background-color: #e3e3e3; -fx-border-color: #b5b5b5; -fx-border-radius: 5px;" text="+" textAlignment="CENTER" textFill="#909090">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
+                     </graphic>
                   </Button>
                </children>
             </VBox>
             <Pane prefHeight="698.0" prefWidth="532.0">
                <children>
                   <Circle fill="#f8f8f8" layoutX="266.0" layoutY="310.0" radius="200.0" stroke="#ff4043" strokeType="INSIDE" strokeWidth="8.0" />
-                  <ProgressBar fx:id="timerProgressbar" layoutX="14.0" layoutY="21.0" prefHeight="38.0" prefWidth="504.0" progress="0.0" />
+                  <ProgressBar fx:id="timerProgressbar" layoutX="14.0" layoutY="21.0" prefHeight="38.0" prefWidth="511.0" progress="0.0" />
                   <Text fx:id="TimerText" layoutX="163.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00:00">
                      <font>
                         <Font size="87.0" />
                      </font>
                   </Text>
-                  <Text fx:id="textprogressbar" fill="#515151" layoutX="14.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tasks progres : 0%" wrappingWidth="114.515625">
+                  <Text fx:id="textprogressbar" fill="#515151" layoutX="14.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tasks progres : 0%" wrappingWidth="114.515625">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Text>
-                  <Button fx:id="play_button" contentDisplay="TOP" layoutX="236.0" layoutY="552.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Stats_button_action" onMouseExited="#StdBtnME" onMouseMoved="#hover" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #ffffff; -fx-border-color: #ff4043; -fx-border-radius: 50px; -fx-background-radius: 50px;" textAlignment="CENTER" textFill="#b5b5b5">
+                  <Button fx:id="play_button" contentDisplay="TOP" layoutX="226.0" layoutY="552.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Stats_button_action" onMouseExited="#StdBtnME" onMouseMoved="#hover" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #ffffff; -fx-border-color: #ff4043; -fx-border-radius: 50px; -fx-background-radius: 50px;" textAlignment="CENTER" textFill="#b5b5b5">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -87,7 +80,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="skip_button" contentDisplay="TOP" layoutX="369.0" layoutY="552.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Stats_button_action" onMouseExited="#StdBtnME" onMouseMoved="#hover" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #ffffff; -fx-border-color: #ff4043; -fx-border-radius: 50px; -fx-background-radius: 50px;" textAlignment="CENTER" textFill="#b5b5b5">
+                  <Button fx:id="skip_button" contentDisplay="TOP" layoutX="329.0" layoutY="552.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Stats_button_action" onMouseExited="#StdBtnME" onMouseMoved="#hover" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #ffffff; -fx-border-color: #ff4043; -fx-border-radius: 50px; -fx-background-radius: 50px;" textAlignment="CENTER" textFill="#b5b5b5">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -99,6 +92,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
+                  <Line endX="83.0" endY="562.0" layoutX="453.0" layoutY="135.0" startX="83.0" startY="-131.0" stroke="#ff4043" />
                </children>
             </Pane>
          </children>

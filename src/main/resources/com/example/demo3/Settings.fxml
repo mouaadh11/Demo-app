@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="699.0" prefWidth="731.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo3.Settings">
+   <children>
+      <Pane id="LoginPan" prefHeight="698.0" prefWidth="727.0">
+         <children>
+            <Text fill="#353535" layoutX="53.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pomodoro Length" wrappingWidth="266.88330078125">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Text>
+            <Text fill="#353535" layoutX="53.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Short Break Length" wrappingWidth="277.88330078125">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Text>
+            <Text fill="#353535" layoutX="53.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Long Break Length" wrappingWidth="288.88330078125">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Text>
+            <Text fill="#353535" layoutX="50.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Short Break After" wrappingWidth="251.88330078125">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Text>
+            <Text fill="#353535" layoutX="53.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Long Break After" wrappingWidth="245.88330078125">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Text>
+            <TextField fx:id="Pomodoro_Length" layoutX="408.0" layoutY="55.0" prefHeight="44.0" prefWidth="149.0" text="30">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="Short_Break_Length" layoutX="408.0" layoutY="129.0" prefHeight="44.0" prefWidth="149.0" text="30">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="Long_Break_Length" layoutX="408.0" layoutY="199.0" prefHeight="44.0" prefWidth="149.0" text="30">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="Short_Break_After" layoutX="408.0" layoutY="274.0" prefHeight="44.0" prefWidth="149.0" text="30">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="Long_Break_After" layoutX="408.0" layoutY="348.0" prefHeight="44.0" prefWidth="149.0" text="30">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </TextField>
+            <Text fill="#353535" layoutX="564.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="min" wrappingWidth="31.88330078125">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <Text fill="#353535" layoutX="564.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="min" wrappingWidth="31.88330078125">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <Text fill="#353535" layoutX="564.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="min" wrappingWidth="31.88330078125">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <Text fill="#353535" layoutX="564.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="min" wrappingWidth="31.88330078125">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <Text fill="#353535" layoutX="564.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="min" wrappingWidth="31.88330078125">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <Text fill="#353535" layoutX="53.0" layoutY="469.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auto Start of Break" wrappingWidth="277.88330078125">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Text>
+            <RadioButton fx:id="AS_Break" layoutX="445.0" layoutY="449.0" mnemonicParsing="false" scaleX="2.0" scaleY="2.0" />
+            <Text fill="#353535" layoutX="50.0" layoutY="545.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auto Start of Pomodoro" wrappingWidth="358.88330078125">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Text>
+            <RadioButton fx:id="AS_Pomodoro" layoutX="445.0" layoutY="525.0" mnemonicParsing="false" scaleX="2.0" scaleY="2.0" />
+            <Text fill="#353535" layoutX="50.0" layoutY="624.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auto Start of long Breaks" wrappingWidth="370.88330078125">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Text>
+            <RadioButton fx:id="AS_Long_Breaks" layoutX="445.0" layoutY="604.0" mnemonicParsing="false" scaleX="2.0" scaleY="2.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

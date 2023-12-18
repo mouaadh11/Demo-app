@@ -16,12 +16,12 @@ import java.io.IOException;
 public class Sidbar {
     // Get a reference to the HelloApplication instance
     private final HelloApplication helloApplication = HelloApplication.getInstance();
-    AnchorPane AnchorloginPane;
-    Pane loginPane;
-    AnchorPane AnchorStatPane;
-    Pane StatPane;
-    AnchorPane AnchorMainPane = helloApplication.initialAnchorPane;
-    Pane MainPane = helloApplication.initailPane;
+    AnchorPane AnchorloginPane = helloApplication.loadPaneFromFXML("LoginPane.fxml");;
+    Pane loginPane = helloApplication.getChildPane(AnchorloginPane,0);  ;
+    AnchorPane AnchorStatPane =  helloApplication.loadPaneFromFXML("StatsPane.fxml");;
+    Pane StatPane = helloApplication.getChildPane(AnchorStatPane,0);
+    AnchorPane AnchorSettPane = helloApplication.loadPaneFromFXML("Settings.fxml");;
+    Pane SettPane = helloApplication.getChildPane(AnchorSettPane,0);;
     @FXML
     private Button MainPomodoro_button;
 
@@ -46,33 +46,29 @@ public class Sidbar {
 
     @FXML
     public void MainP_button_action(ActionEvent event) {
-        if (!helloApplication.MainAnchor.getChildren().contains(helloApplication.initailPane) && !helloApplication.MainAnchor.getChildren().contains(MainPane)) {
-            // Load the LoginPane
-            AnchorMainPane = helloApplication.loadPaneFromFXML("MainTimer.fxml");
-            MainPane = helloApplication.getChildPane(AnchorMainPane,0);
-            System.out.println("rah yadkhol");
+        if (!helloApplication.MainAnchor.getChildren().contains(helloApplication.initailPane)) {
+
             // Remove the initialPane from MainAnchor
             helloApplication.MainAnchor.getChildren().remove(helloApplication.getChildPane(helloApplication.MainAnchor,1));
 
             // Add the LoginPane to MainAnchor
-            AnchorPane.setRightAnchor(MainPane, 0.0);
-            helloApplication.MainAnchor.getChildren().add(MainPane);
+            AnchorPane.setRightAnchor(helloApplication.initailPane, 0.0);
+            helloApplication.MainAnchor.getChildren().add(helloApplication.initailPane);
+            System.out.println("new Main Pane had opened");
         }
     }
 
     @FXML
     void Profile_buttonAction(ActionEvent event) {
         if (!helloApplication.MainAnchor.getChildren().contains(loginPane)) {
-            // Load the LoginPane
-            AnchorloginPane = helloApplication.loadPaneFromFXML("LoginPane.fxml");
-            loginPane = helloApplication.getChildPane(AnchorloginPane,0);
-            System.out.println("rah yadkhol");
+
             // Remove the initialPane from MainAnchor
             helloApplication.MainAnchor.getChildren().remove(helloApplication.getChildPane(helloApplication.MainAnchor,1));
 
             // Add the LoginPane to MainAnchor
             AnchorPane.setRightAnchor(loginPane, 0.0);
             helloApplication.MainAnchor.getChildren().add(loginPane);
+            System.out.println("new Profile Pane had opened");
         }
     }
 
@@ -80,20 +76,30 @@ public class Sidbar {
     @FXML
     void Stats_button_action(ActionEvent event) {
         if (!helloApplication.MainAnchor.getChildren().contains(StatPane)) {
-            // Load the LoginPane
-            AnchorStatPane = helloApplication.loadPaneFromFXML("StatsPane.fxml");
-            StatPane = helloApplication.getChildPane(AnchorStatPane,0);
-            System.out.println("rah yadkhol");
+
             // Remove the initialPane from MainAnchor
             helloApplication.MainAnchor.getChildren().remove(helloApplication.getChildPane(helloApplication.MainAnchor,1));
 
             // Add the LoginPane to MainAnchor
             AnchorPane.setRightAnchor(StatPane, 0.0);
             helloApplication.MainAnchor.getChildren().add(StatPane);
+            System.out.println("new Stat Pane had opened");
         }
 
     }
+    @FXML
+    void Sett_button_action(ActionEvent event) {
+        if (!helloApplication.MainAnchor.getChildren().contains(SettPane)) {
 
+            // Remove the initialPane from MainAnchor
+            helloApplication.MainAnchor.getChildren().remove(helloApplication.getChildPane(helloApplication.MainAnchor,1));
+
+            // Add the LoginPane to MainAnchor
+            AnchorPane.setRightAnchor(SettPane, 0.0);
+            helloApplication.MainAnchor.getChildren().add(SettPane);
+            System.out.println("new Settings Pane had opened");
+        }
+    }
     @FXML
     void StdBtnME(MouseEvent event) {
 

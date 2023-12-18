@@ -9,7 +9,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="698.0" prefWidth="281.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo3.Sidbar">
    <children>
       <Pane prefHeight="698.0" prefWidth="286.0">
@@ -57,7 +56,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="settings_button" contentDisplay="TOP" mnemonicParsing="false" onAction="#MainP_button_action" onMouseExited="#Btn_2ME" onMouseMoved="#btn_2Hover" prefHeight="108.0" prefWidth="285.0" style="-fx-background-color: #ff4043;" text=" " textFill="WHITE">
+                  <Button fx:id="settings_button" contentDisplay="TOP" mnemonicParsing="false" onAction="#Sett_button_action" onMouseExited="#Btn_2ME" onMouseMoved="#btn_2Hover" prefHeight="108.0" prefWidth="285.0" style="-fx-background-color: #ff4043;" text=" " textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
